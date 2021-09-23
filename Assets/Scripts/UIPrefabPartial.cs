@@ -86,6 +86,7 @@ public class UIPrefabPartial : MonoBehaviour
         GameObject go = UnityEditor.PrefabUtility.InstantiatePrefab(prefab, parent) as GameObject;// Instantiate(prefab, parent.transform);
         return go;
 #endif
+        return null;
     }
 
     public GameObject LoadPartial(string path, GameObject parent)
