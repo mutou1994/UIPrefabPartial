@@ -43,6 +43,10 @@ public class UIPrefabPartialItemDrawer : PropertyDrawer
             if(!string.IsNullOrEmpty(path))
             {
                 oldPrefab = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(path);
+                if(oldPrefab == null)
+                {
+                    pathProperty.stringValue = string.Empty;
+                }
             }
             UnityEngine.Object prefab = EditorGUI.ObjectField(prefabRect, oldPrefab, typeof(GameObject), false);
             if(prefab != oldPrefab)
