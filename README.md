@@ -4,8 +4,8 @@
 
 #### UIPrefabPartial组件
 参考C# partial class的命名，我把这个组件命名为PrefabPartial。
-首先看下使用：
-![Alt text](./1632568805771.png)
+首先看下使用： 
+ ![Alt text](./1632568805771.png)
 一般来说将这个组件挂载到界面Prefab的根节点统一管理需要加载的Prefab，不过挂到子节点也可以实现嵌套。
 可以看到组件上分了三个列表，Prefab，Parent，Frame。分别是需要加载的Prefab资源，加载后挂载的Parent节点以及延迟加载的帧数。
 **注意这里的Prefab列，虽然是直接拖拽了Prefab资源，但实际组件中只存储了Prefab的资源路径，并没有直接引用，这样在打包的时候就不会产生依赖，可以将Prefab和主UI Prefab分别打在不同的bundle里，加载主UI的时候也不需要去额外加载依赖bundle，而是在延迟帧再去加载bundle并实例化。**
